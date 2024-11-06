@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Volunteer Hub</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+	<div id="header">
+		<div id="logo-dropdown-container">
+			<!-- Dropdown Menu for Additional Links -->
+			<div id="dropdown">
+				<span id="dropdown-icon">&#9776;</span> <!-- Hamburger icon for dropdown -->
+				<div id="dropdown-content">
+					<a href="furniture_browser.html"><button>Browse Furniture</button></a>
+					<a href="about_us.html"><button>About Us</button></a>
+					<a href="faq.html"><button>FAQs</button></a>
+					<a href="contact_us.html"><button>Contact Us</button></a>
+				</div>
+			</div>
+
+			<!-- Logo Section -->
+			<div id="logo">
+				<a href="?page=home">
+					<img src="images/logo.png" alt="The Logo">
+				</a>
+			</div>
+		</div>
+		
+		<!-- Search Bar in the middle -->
+		<div class="container">
+			<div class="search-bar-wrapper">
+				<input type="text" id="general-search" name="general-search" placeholder="Search...">
+				<button type="button" class="search-button">Search</button>
+			</div>
+		</div>
+	
+		<!-- Buttons Section -->
+		<div id="buttons">
+			<a href="signup.html"><button>Sign Up</button></a>
+			<a href="signin.html"><button>Sign In</button></a>
+			<a href="cart.html"><button>Cart</button></a>
+
+
+			<!-- Profile Dropdown Menu -->
+			<div class="dropdown">
+				<img src="./images/profile_icon.png" alt="Icon Image" id="dropdownIcon">
+				<div class="dropdown-content" id="dropdownContent">
+					<a href="user_dashboard.html">Dashboard</a>
+					<a href="logout.html">Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<div class="container">
+		<div class="centered-text">
+			<h3>Browse Furniture</h3>
+			<!-- Add the green area around the search containers -->
+			<div class="green-area">		
+				<div class="search-container">
+					<input type="text" id="keyword" name="keyword" placeholder="Search by Keyword">
+
+					<!-- Filter by Type Dropdown -->
+					<div class="dropdown">
+						<button class="dropdown-button">Filter by Type</button>
+						<div class="dropdown-content">
+							<input type="checkbox" id="armoire" name="filter-type" value="filter_type_armoire">
+							<label for="armoire">Armoires</label><br>
+							<input type="checkbox" id="bookcase" name="filter-type" value="filter_type_bookcase">
+							<label for="bookcase">Bookcases</label><br>
+							<input type="checkbox" id="cabinet" name="filter-type" value="filter_type_cabinet">
+							<label for="cabinet">Cabinets</label><br>
+							<!-- Add more checkboxes as needed -->
+						</div>
+					</div>
+
+					<!-- Filter by Price Dropdown -->
+					<div class="dropdown">
+						<button class="dropdown-button">Filter by Price</button>
+						<div class="dropdown-content">
+							<input type="checkbox" id="price-under-100" name="filter-price" value="filter_price_under_100">
+							<label for="price-under-100">$0 - $100</label><br>
+							<input type="checkbox" id="price-100-250" name="filter-price" value="filter_price_100_250">
+							<label for="price-100-250">$100 - $250</label><br>
+							<!-- Add more checkboxes as needed -->
+						</div>
+					</div>
+
+					<!-- Filter by Room Dropdown -->
+					<div class="dropdown">
+						<button class="dropdown-button">Filter by Room</button>
+						<div class="dropdown-content">
+							<input type="checkbox" id="bedroom" name="filter-room" value="filter_room_bedroom">
+							<label for="bedroom">Bedroom</label><br>
+							<input type="checkbox" id="bathroom" name="filter-room" value="filter_room_bathroom">
+							<label for="bathroom">Bathroom</label><br>
+							<!-- Add more checkboxes as needed -->
+						</div>
+					</div>
+
+					<!-- Sort By Dropdown -->
+					<div class="dropdown">
+						<button class="dropdown-button">Sort By</button>
+						<div class="dropdown-content">
+							<input type="radio" id="sort-lowest" name="sort-by" value="sort_price_low">
+							<label for="sort-lowest">Sort by Lowest Price</label><br>
+							<input type="radio" id="sort-highest" name="sort-by" value="sort_price_high">
+							<label for="sort-highest">Sort by Highest Price</label><br>
+							<!-- Add more radio buttons as needed -->
+						</div>
+					</div>
+
+					<button type="button" class="search-button">Advanced Search</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!-- Results Area -->
+	<div class="results-area">
+		<div class="opportunity">
+			<p><strong>Furniture Name:</strong> Virginia Desk</p>
+			<p><strong>Price:</strong> $249.99</p>
+			<button type="button" class="search-button">Product Page</button>
+		</div>
+	</div>
+	
+
+	<footer>
+		&copy; 2024 Volunteer Hub. All rights reserved.
+	</footer>
+			
+
+</body>
+
+</html>

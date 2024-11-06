@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Furniture Store</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="logo.png" alt="Furniture Store Logo">
+			<h1>Furniture Store</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="furniture_browser.html">Browse Furniture</a></li>
+				<li><a href="user_dashboard.html">Dashboard</a></li>
+				<li><a href="signup.html">Sign Up</a></li>
+				<li><a href="signin.html">Sign In</a></li>
+			</ul>
+		</nav>
+		<a href="cart.html" class="cart-button">Cart</a>
+		<div class="hamburger" onclick="toggleMenu()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</header>
+	<script>
+		function toggleMenu() {
+			const nav = document.querySelector('header nav ul');
+			nav.classList.toggle('active');
+		}
+	</script>
+    <main>
+        <section>
+            <h2>Thank you for your purchase!</h2>
+            <p>Your order has been successfully placed.</p>
+            <h3>Order Summary</h3>
+            <ul>
+                <li>Comfy Chair - Quantity: 1 - Price: $149</li>
+                <!-- More items if applicable -->
+            </ul>
+            <p>Total: $149</p>
+            <h3>Tracking Information</h3>
+            <p>Estimated delivery: 3-5 business days.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Furniture Store</p>
+    </footer>
+</body>
+</html>
