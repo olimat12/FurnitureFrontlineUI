@@ -3,13 +3,12 @@ body {
     margin: 0px;
     padding: 0;
     background: whitesmoke;
-    background-size: cover;
     font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* Header and logo styling */
 #header {
-	background-color: #7CC623;
+    background-color: #7CC623;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +17,7 @@ body {
 #logo-dropdown-container {
     display: flex;
     align-items: center;
-	padding: 20px;
+    padding: 20px;
 }
 
 #logo img {
@@ -48,10 +47,9 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 10px;
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
-/* Show dropdown content on hover */
 #dropdown:hover #dropdown-content {
     display: block;
 }
@@ -72,23 +70,21 @@ body {
 
 /* Buttons Section */
 #buttons {
-	white-space: nowrap;
-	display: flex;
+    white-space: nowrap;
+    display: flex;
     text-align: right;
-	align-items: center;
-	gap: 10px;
-	padding-right: 30px;
+    align-items: center;
+    gap: 10px;
+    padding-right: 30px;
 }
 
 #buttons button {
-    margin-left: 6px;
     background-color: #140650;
     color: #FFFFFF;
     border: 1px solid #2E6DA4;
     border-radius: 4px;
     padding: 8px 24px;
     font-family: 'Roboto', Arial, sans-serif;
-    font-weight: normal;
     font-size: 14px;
     cursor: pointer;
 }
@@ -121,27 +117,25 @@ body {
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 20px;
-    width: 100%; /* Adjust width */
-    max-width: 800px; /* Limit maximum width */
+    width: 100%;
+    max-width: 800px;
 }
 
 .results-area {
-    width: 90%; /* Adjust width */
-    max-width: auto; /* Limit maximum width */
-    max-height: auto; /* Adjust the height as needed */
-    overflow-y: auto; /* Enable vertical scrollbar */
+    width: 90%;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-sizing: border-box;
     margin-bottom: 30px;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 100px;
 }
 
-/* Profile dropdown styling */
+/* Dropdown for filters */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -156,7 +150,7 @@ body {
     z-index: 1;
     max-height: 200px;
     white-space: nowrap;
-	text-align: left;
+    text-align: left;
 }
 
 .dropdown-content a {
@@ -166,72 +160,47 @@ body {
     display: block;
 }
 
-/* Update dropdown content label styling */
 .dropdown-content label {
-    display: flex; /* Keep flex to align checkbox and text */
+    display: flex;
     align-items: center;
-    gap: 10px; /* Space between checkbox and label text */
+    gap: 10px;
     color: #140650;
-    padding: 12px 16px; /* Increase padding for hover coverage */
+    padding: 12px 16px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth hover effect */
+    transition: background-color 0.3s;
     font-size: 16px;
 }
 
-/* Hover effect for dropdown content items */
 .dropdown-content label:hover {
     background-color: #ddd;
     border-radius: 4px;
 }
 
-/* Ensure checkbox is aligned with the label */
-.dropdown-content input[type="checkbox"], 
-.dropdown-content input[type="radio"] {
-    margin-right: 10px; /* Space between checkbox and label */
-    display: inline-block; /* Ensure inline-block display */
-    vertical-align: middle; /* Align vertically in the middle */
-}
-
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show profile dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* Centered search bar */
 .search-bar-wrapper {
-	position: absolute;
-	left: 50%;
-	height: auto;
+    position: absolute;
+    left: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 5; 
     max-width: 400px;
 }
 
 .search-bar-wrapper input {
     padding: 10px;
-	margin-right: 10px;
-    height: auto; /* Match height to buttons and other elements */
+    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
     font-size: 14px;
 }
 
 .search-bar-wrapper .search-button {
-    margin-left: 6px;
     background-color: #140650;
     color: #FFFFFF;
     border: 1px solid #2E6DA4;
     border-radius: 4px;
     padding: 8px 24px;
     font-family: 'Roboto', Arial, sans-serif;
-    font-weight: normal;
     font-size: 14px;
     cursor: pointer;
 }
@@ -247,98 +216,7 @@ footer {
     width: 100%;
 }
 
-/* Signup form styles */
-.signup-heading {
-    text-align: center;
-    color: #140650;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-form {
-    text-align: center;
-    background: #7CC623;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    margin: 100px auto 0;
-}
-
-form label {
-    display: block;
-    color: #140650;
-    margin-bottom: 8px;
-}
-
-form input {
-    width: 100%;
-    padding: 6px;
-    margin-bottom: 8px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #140650;
-    color: #FFFFFF;
-    border: 1px solid #2E6DA4;
-    border-radius: 4px;
-    padding: 6px 20px;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* Name input container styling */
-.name-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.input-wrapper {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.input-wrapper label {
-    display: block;
-}
-
-.input-wrapper input {
-    width: 100%;
-}
-
-/* Home page background */
-.home-bg {
-    background: url('../../images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Centered text for home page */
-.centered-text h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.centered-text p {
-    font-size: 20px;
-}
-
-/* Opportunity items */
-.opportunity {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
+/* Furniture item styles */
 .furniture-item {
     display: flex;
     align-items: center;
@@ -380,7 +258,7 @@ form button {
 .pagination-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .page-button {
@@ -400,9 +278,8 @@ form button {
 /* Items per page selector styles */
 .items-per-page {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .items-per-page label {

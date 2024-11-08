@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,81 +9,93 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Selecting elements
             const itemsPerPageSelect = document.getElementById('itemsPerPage');
             const paginationContainer = document.getElementById('pagination');
             const itemsContainer = document.getElementById('itemsContainer');
+
+            // Debugging: Check if elements exist
+            console.log("itemsPerPageSelect:", itemsPerPageSelect);
+            console.log("paginationContainer:", paginationContainer);
+            console.log("itemsContainer:", itemsContainer);
 
             let currentPage = 1;
             let itemsPerPage = 10;
 
             const items = [
-				{ name: 'Virginia Desk', dimensions: '72x36x12 inches', price: '$249.99', shipping: 'December 1, 2024', image: 'images/furniture1.jpg' },
-				{ name: 'Oak Bookshelf', dimensions: '72x36x12 inches', price: '$199.99', shipping: 'November 20, 2024', image: 'images/furniture2.jpg' },
-				{ name: 'Maple Coffee Table', dimensions: '40x20x18 inches', price: '$149.99', shipping: 'December 5, 2024', image: 'images/furniture3.jpg' },
-				{ name: 'Cherry Nightstand', dimensions: '24x18x24 inches', price: '$89.99', shipping: 'November 25, 2024', image: 'images/furniture4.jpg' },
-				{ name: 'Pine Dresser', dimensions: '60x20x30 inches', price: '$299.99', shipping: 'December 10, 2024', image: 'images/furniture5.jpg' },
-				{ name: 'Walnut TV Stand', dimensions: '50x15x25 inches', price: '$179.99', shipping: 'November 28, 2024', image: 'images/furniture6.jpg' },
-				{ name: 'Glass Dining Table', dimensions: '72x36x30 inches', price: '$399.99', shipping: 'December 15, 2024', image: 'images/furniture7.jpg' },
-				{ name: 'Mahogany Console Table', dimensions: '48x12x30 inches', price: '$129.99', shipping: 'December 1, 2024', image: 'images/furniture8.jpg' },
-				{ name: 'Leather Armchair', dimensions: '34x36x38 inches', price: '$349.99', shipping: 'November 23, 2024', image: 'images/furniture9.jpg' },
-				{ name: 'Birch Office Chair', dimensions: '22x24x36 inches', price: '$129.99', shipping: 'November 29, 2024', image: 'images/furniture10.jpg' },
-				{ name: 'Teak Outdoor Bench', dimensions: '60x24x35 inches', price: '$249.99', shipping: 'December 3, 2024', image: 'images/furniture11.jpg' },
-				{ name: 'Rustic Bed Frame', dimensions: '80x60x14 inches', price: '$499.99', shipping: 'December 12, 2024', image: 'images/furniture12.jpg' },
-				{ name: 'Modern Side Table', dimensions: '20x20x22 inches', price: '$79.99', shipping: 'November 18, 2024', image: 'images/furniture13.jpg' },
-				{ name: 'Antique Writing Desk', dimensions: '50x26x30 inches', price: '$399.99', shipping: 'November 27, 2024', image: 'images/furniture14.jpg' },
-				{ name: 'Velvet Sofa', dimensions: '84x36x34 inches', price: '$899.99', shipping: 'December 8, 2024', image: 'images/furniture15.jpg' },
-				{ name: 'Reclaimed Wood Coffee Table', dimensions: '42x24x18 inches', price: '$199.99', shipping: 'November 30, 2024', image: 'images/furniture16.jpg' },
-				{ name: 'Round Dining Table', dimensions: '48x48x30 inches', price: '$349.99', shipping: 'December 6, 2024', image: 'images/furniture17.jpg' },
-				{ name: 'Ladder Shelf', dimensions: '24x14x72 inches', price: '$99.99', shipping: 'November 19, 2024', image: 'images/furniture18.jpg' },
-				{ name: 'Fabric Sectional Sofa', dimensions: '120x60x36 inches', price: '$1,299.99', shipping: 'December 11, 2024', image: 'images/furniture19.jpg' },
-				{ name: 'Glass Top Console Table', dimensions: '50x14x30 inches', price: '$179.99', shipping: 'November 22, 2024', image: 'images/furniture20.jpg' },
-				{ name: 'Marble Top Nightstand', dimensions: '22x18x24 inches', price: '$149.99', shipping: 'December 4, 2024', image: 'images/furniture21.jpg' },
-				{ name: 'Bamboo Shoe Rack', dimensions: '30x12x18 inches', price: '$49.99', shipping: 'November 26, 2024', image: 'images/furniture22.jpg' },
-				{ name: 'Industrial Bar Stool', dimensions: '15x15x30 inches', price: '$79.99', shipping: 'December 9, 2024', image: 'images/furniture23.jpg' },
-				{ name: 'Upholstered Dining Chair', dimensions: '18x20x35 inches', price: '$99.99', shipping: 'November 21, 2024', image: 'images/furniture24.jpg' },
-				{ name: 'Modern TV Stand', dimensions: '60x16x20 inches', price: '$229.99', shipping: 'December 13, 2024', image: 'images/furniture25.jpg' },
-				{ name: 'Accent Armchair', dimensions: '30x30x35 inches', price: '$249.99', shipping: 'December 7, 2024', image: 'images/furniture26.jpg' },
-				{ name: 'Wooden Rocking Chair', dimensions: '24x32x42 inches', price: '$159.99', shipping: 'November 24, 2024', image: 'images/furniture27.jpg' },
-				{ name: 'Steel Frame Bed', dimensions: '80x60x14 inches', price: '$349.99', shipping: 'November 30, 2024', image: 'images/furniture28.jpg' },
-				{ name: 'Oak Dining Bench', dimensions: '48x14x18 inches', price: '$129.99', shipping: 'December 2, 2024', image: 'images/furniture29.jpg' },
-				{ name: 'Mid-Century Modern Sofa', dimensions: '78x34x32 inches', price: '$799.99', shipping: 'December 14, 2024', image: 'images/furniture30.jpg' },
-				{ name: 'Foldable TV Tray', dimensions: '19x15x26 inches', price: '$29.99', shipping: 'November 17, 2024', image: 'images/furniture31.jpg' },
-				{ name: 'Entryway Hall Tree', dimensions: '40x15x72 inches', price: '$249.99', shipping: 'December 16, 2024', image: 'images/furniture32.jpg' },
-				{ name: 'Cedar Chest', dimensions: '40x20x22 inches', price: '$199.99', shipping: 'November 28, 2024', image: 'images/furniture33.jpg' },
-				{ name: 'Futon with Mattress', dimensions: '80x36x34 inches', price: '$399.99', shipping: 'December 3, 2024', image: 'images/furniture34.jpg' },
-				{ name: 'Nesting Side Tables', dimensions: '18x18x20 inches', price: '$99.99', shipping: 'November 25, 2024', image: 'images/furniture35.jpg' },
-				{ name: 'Bookshelf with Glass Doors', dimensions: '36x14x72 inches', price: '$349.99', shipping: 'December 5, 2024', image: 'images/furniture36.jpg' },
-				{ name: 'Wicker Patio Set', dimensions: 'Chair: 28x30x32 inches, Table: 20x20x18 inches', price: '$499.99', shipping: 'December 8, 2024', image: 'images/furniture37.jpg' },
-				{ name: 'Kids Bunk Bed', dimensions: '80x42x65 inches', price: '$599.99', shipping: 'December 12, 2024', image: 'images/furniture38.jpg' },
-				{ name: 'Rustic TV Stand', dimensions: '55x16x24 inches', price: '$199.99', shipping: 'November 29, 2024', image: 'images/furniture39.jpg' },
-				{ name: 'Glass Display Cabinet', dimensions: '24x14x72 inches', price: '$249.99', shipping: 'December 6, 2024', image: 'images/furniture40.jpg' },
-				{ name: 'Convertible Sleeper Sofa', dimensions: '84x36x34 inches', price: '$699.99', shipping: 'November 26, 2024', image: 'images/furniture41.jpg' },
-				{ name: 'Recliner Chair', dimensions: '35x36x40 inches', price: '$299.99', shipping: 'December 11, 2024', image: 'images/furniture42.jpg' },
-				{ name: 'Rolling Kitchen Island', dimensions: '40x20x36 inches', price: '$179.99', shipping: 'November 23, 2024', image: 'images/furniture43.jpg' },
-				{ name: 'Wooden Dining Table', dimensions: '72x36x30 inches', price: '$399.99', shipping: 'December 9, 2024', image: 'images/furniture44.jpg' },
-				{ name: 'Padded Bar Stool', dimensions: '18x18x30 inches', price: '$69.99', shipping: 'November 20, 2024', image: 'images/furniture45.jpg' },
-				{ name: 'Fabric Ottoman', dimensions: '30x20x18 inches', price: '$79.99', shipping: 'December 7, 2024', image: 'images/furniture46.jpg' },
-				{ name: 'Accent Cabinet', dimensions: '32x14x32 inches', price: '$149.99', shipping: 'November 24, 2024', image: 'images/furniture47.jpg' },
-				{ name: 'Iron Frame Bookshelf', dimensions: '36x12x72 inches', price: '$199.99', shipping: 'December 4, 2024', image: 'images/furniture48.jpg' },
-				{ name: 'Wooden Coat Rack', dimensions: '18x18x72 inches', price: '$49.99', shipping: 'November 21, 2024', image: 'images/furniture49.jpg' },
-				{ name: 'Folding Adirondack Chair', dimensions: '30x35x38 inches', price: '$99.99', shipping: 'December 2, 2024', image: 'images/furniture50.jpg' },
-				{ name: 'Double Vanity Sink', dimensions: '60x22x34 inches', price: '$599.99', shipping: 'December 10, 2024', image: 'images/furniture51.jpg' },
-				{ name: 'Adjustable Office Desk', dimensions: '48x24x30-48 inches', price: '$349.99', shipping: 'November 22, 2024', image: 'images/furniture52.jpg' },
-				{ name: 'Modern Loveseat', dimensions: '58x32x32 inches', price: '$549.99', shipping: 'December 15, 2024', image: 'images/furniture53.jpg' },
-				{ name: 'Tufted Storage Bench', dimensions: '42x18x20 inches', price: '$149.99', shipping: 'November 27, 2024', image: 'images/furniture54.jpg' },
-				{ name: 'Round Ottoman', dimensions: '30x30x18 inches', price: '$89.99', shipping: 'December 14, 2024', image: 'images/furniture55.jpg' },
-				{ name: 'Outdoor Dining Set', dimensions: 'Table: 60x36x30 inches, Chair: 24x24x35 inches', price: '$799.99', shipping: 'November 30, 2024', image: 'images/furniture56.jpg' },
-				{ name: 'High Back Office Chair', dimensions: '26x26x48 inches', price: '$199.99', shipping: 'December 3, 2024', image: 'images/furniture57.jpg' },
-				{ name: 'Floating Wall Shelf', dimensions: '36x10x2 inches', price: '$39.99', shipping: 'November 18, 2024', image: 'images/furniture58.jpg' },
-				{ name: 'Queen Size Bed Frame', dimensions: '84x64x14 inches', price: '$399.99', shipping: 'December 16, 2024', image: 'images/furniture59.jpg' },
-				{ name: 'Glass End Table', dimensions: '20x20x22 inches', price: '$59.99', shipping: 'November 29, 2024', image: 'images/furniture60.jpg' }
+				{ name: 'Virginia Desk', 			dimensions: '72x36x12 inches', price: '$249.99', 	shipping: 'December 1, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Oak Bookshelf', 			dimensions: '72x36x12 inches', price: '$199.99', 	shipping: 'November 20, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Maple Coffee Table', 		dimensions: '40x20x18 inches', price: '$149.99',	shipping: 'December 5, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Cherry Nightstand', 		dimensions: '24x18x24 inches', price: '$89.99', 	shipping: 'November 25, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Pine Dresser', 			dimensions: '60x20x30 inches', price: '$299.99', 	shipping: 'December 10, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Walnut TV Stand', 			dimensions: '50x15x25 inches', price: '$179.99', 	shipping: 'November 28, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Glass Dining Table', 		dimensions: '72x36x30 inches', price: '$399.99', 	shipping: 'December 15, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Mahogany Console Table',	dimensions: '48x12x30 inches', price: '$129.99', 	shipping: 'December 1, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Leather Armchair', 		dimensions: '34x36x38 inches', price: '$349.99', 	shipping: 'November 23, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Birch Office Chair', 		dimensions: '22x24x36 inches', price: '$129.99', 	shipping: 'November 29, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Teak Outdoor Bench',		dimensions: '60x24x35 inches', price: '$249.99', 	shipping: 'December 3, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Rustic Bed Frame', 		dimensions: '80x60x14 inches', price: '$499.99', 	shipping: 'December 12, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Modern Side Table',		dimensions: '20x20x22 inches', price: '$79.99', 	shipping: 'November 18, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Antique Writing Desk', 	dimensions: '50x26x30 inches', price: '$399.99', 	shipping: 'November 27, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Velvet Sofa', 				dimensions: '84x36x34 inches', price: '$899.99', 	shipping: 'December 8, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Wood Coffee Table', 		dimensions: '42x24x18 inches', price: '$199.99', 	shipping: 'November 30, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Round Dining Table', 		dimensions: '48x48x30 inches', price: '$349.99', 	shipping: 'December 6, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Ladder Shelf', 			dimensions: '24x14x72 inches', price: '$99.99', 	shipping: 'November 19, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Fabric Sectional Sofa',	dimensions: '80x60x32 inches', price: '$1,299.99', 	shipping: 'December 11, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Glass Top Console Table', 	dimensions: '50x14x30 inches', price: '$179.99', 	shipping: 'November 22, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Marble Top Nightstand', 	dimensions: '22x18x24 inches', price: '$149.99', 	shipping: 'December 4, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Bamboo Shoe Rack', 		dimensions: '30x12x18 inches', price: '$49.99', 	shipping: 'November 26, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Industrial Bar Stool', 	dimensions: '15x15x30 inches', price: '$79.99', 	shipping: 'December 9, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Upholstered Dining Chair', dimensions: '18x20x35 inches', price: '$99.99', 	shipping: 'November 21, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Modern TV Stand', 			dimensions: '60x16x20 inches', price: '$229.99', 	shipping: 'December 13, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Accent Armchair', 			dimensions: '30x30x35 inches', price: '$249.99', 	shipping: 'December 7, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Wooden Rocking Chair', 	dimensions: '24x32x42 inches', price: '$159.99', 	shipping: 'November 24, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Steel Frame Bed', 			dimensions: '80x60x14 inches', price: '$349.99', 	shipping: 'November 30, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Oak Dining Bench', 		dimensions: '48x14x18 inches', price: '$129.99', 	shipping: 'December 2, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Mid-Century Modern Sofa', 	dimensions: '78x34x32 inches', price: '$799.99', 	shipping: 'December 14, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Foldable TV Tray', 		dimensions: '19x15x26 inches', price: '$29.99', 	shipping: 'November 17, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Entryway Hall Tree', 		dimensions: '40x15x72 inches', price: '$249.99', 	shipping: 'December 16, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Cedar Chest', 				dimensions: '40x20x22 inches', price: '$199.99', 	shipping: 'November 28, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Futon with Mattress', 		dimensions: '80x36x34 inches', price: '$399.99', 	shipping: 'December 3, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Nesting Side Tables', 		dimensions: '18x18x20 inches', price: '$99.99', 	shipping: 'November 25, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Glass Door Bookshelf', 	dimensions: '36x14x72 inches', price: '$349.99', 	shipping: 'December 5, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Wicker Patio Chair', 		dimensions: '28x30x32 inches', price: '$499.99', 	shipping: 'December 8, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Kids Bunk Bed', 			dimensions: '80x42x65 inches', price: '$599.99', 	shipping: 'December 12, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Rustic TV Stand', 			dimensions: '55x16x24 inches', price: '$199.99', 	shipping: 'November 29, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Glass Display Cabinet', 	dimensions: '24x14x72 inches', price: '$249.99', 	shipping: 'December 6, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Convertible Sleeper Sofa', dimensions: '84x36x34 inches', price: '$699.99', 	shipping: 'November 26, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Recliner Chair', 			dimensions: '35x36x40 inches', price: '$299.99', 	shipping: 'December 11, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Rolling Kitchen Island', 	dimensions: '40x20x36 inches', price: '$179.99', 	shipping: 'November 23, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Wooden Dining Table', 		dimensions: '72x36x30 inches', price: '$399.99', 	shipping: 'December 9, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Padded Bar Stool', 		dimensions: '18x18x30 inches', price: '$69.99', 	shipping: 'November 20, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Fabric Ottoman', 			dimensions: '30x20x18 inches', price: '$79.99', 	shipping: 'December 7, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Accent Cabinet', 			dimensions: '32x14x32 inches', price: '$149.99', 	shipping: 'November 24, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Iron Frame Bookshelf', 	dimensions: '36x12x72 inches', price: '$199.99', 	shipping: 'December 4, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Wooden Coat Rack', 		dimensions: '18x18x72 inches', price: '$49.99', 	shipping: 'November 21, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Folding Adirondack Chair', dimensions: '30x35x38 inches', price: '$99.99', 	shipping: 'December 2, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Double Vanity Sink', 		dimensions: '60x22x34 inches', price: '$599.99', 	shipping: 'December 10, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Adjustable Office Desk',	dimensions: '48x24x30 inches', price: '$349.99', 	shipping: 'November 22, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Modern Loveseat', 			dimensions: '58x32x32 inches', price: '$549.99',	shipping: 'December 15, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Tufted Storage Bench', 	dimensions: '42x18x20 inches', price: '$149.99', 	shipping: 'November 27, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Round Ottoman', 			dimensions: '30x30x18 inches', price: '$89.99', 	shipping: 'December 14, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Outdoor Dining Table', 	dimensions: '60x36x30 inches', price: '$799.99', 	shipping: 'November 30, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'High Back Office Chair', 	dimensions: '26x26x48 inches', price: '$199.99', 	shipping: 'December 3, 2024', 	image: 'images/furniture1.jpg' },
+				{ name: 'Floating Wall Shelf', 		dimensions: '36x10x02 inches', price: '$39.99', 	shipping: 'November 18, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Queen Size Bed Frame', 	dimensions: '84x64x14 inches', price: '$399.99', 	shipping: 'December 16, 2024',	image: 'images/furniture1.jpg' },
+				{ name: 'Glass End Table', 			dimensions: '20x20x22 inches', price: '$59.99', 	shipping: 'November 29, 2024',	image: 'images/furniture1.jpg' }
 			];
 
             function renderItems() {
+                console.log("renderItems() called");
+                console.log("Current Page:", currentPage, "Items Per Page:", itemsPerPage);
+
                 itemsContainer.innerHTML = '';
                 const start = (currentPage - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
                 const itemsToRender = items.slice(start, end);
+
+                // Debugging: Log which items are being rendered
+                console.log("Items to Render:", itemsToRender);
 
                 itemsToRender.forEach(item => {
                     const itemDiv = document.createElement('div');
@@ -100,11 +113,19 @@
                     `;
                     itemsContainer.appendChild(itemDiv);
                 });
+
+                // Check if items were appended
+                console.log("Number of items rendered:", itemsContainer.children.length);
             }
 
             function renderPagination() {
+                console.log("renderPagination() called");
+
                 paginationContainer.innerHTML = '';
                 const pageCount = Math.ceil(items.length / itemsPerPage);
+
+                // Debugging: Log total number of pages
+                console.log("Total Page Count:", pageCount);
 
                 for (let i = 1; i <= pageCount; i++) {
                     const pageButton = document.createElement('button');
@@ -113,24 +134,30 @@
                     pageButton.addEventListener('click', () => {
                         currentPage = i;
                         renderItems();
+                        renderPagination();
                     });
                     paginationContainer.appendChild(pageButton);
                 }
+
+                // Check if pagination buttons were appended
+                console.log("Number of pagination buttons:", paginationContainer.children.length);
             }
 
             itemsPerPageSelect.addEventListener('change', (e) => {
+                console.log("Items per page changed to:", e.target.value);
                 itemsPerPage = parseInt(e.target.value);
                 currentPage = 1; // Reset to first page
                 renderItems();
                 renderPagination();
             });
 
+            // Initial render
+            console.log("Initial renderItems() and renderPagination() calls");
             renderItems();
             renderPagination();
         });
     </script>
 </head>
-
 <body>
     <div id="header">
         <div id="logo-dropdown-container">
