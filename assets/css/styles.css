@@ -376,3 +376,41 @@ form button {
     font-size: 14px;
 }
 
+/* Pagination styles */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-button {
+    background-color: #140650;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.page-button:hover {
+    background-color: #7CC623;
+}
+
+/* Items per page selector styles */
+.items-per-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.items-per-page label {
+    margin-right: 10px;
+}
+
+.items-per-page select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
