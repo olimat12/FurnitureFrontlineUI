@@ -18,10 +18,12 @@
             console.log("itemsPerPageSelect:", itemsPerPageSelect);
             console.log("paginationContainer:", paginationContainer);
             console.log("itemsContainer:", itemsContainer);
-
+			
+			//Establish starting parameters
             let currentPage = 1;
             let itemsPerPage = 10;
-
+			
+			//Individual Furniture items with placeholders for furniture image
             const items = [
 				{ name: 'Virginia Desk', 			dimensions: '72x36x12 inches', price: '$249.99', 	shipping: 'December 1, 2024', 	image: 'images/furniture1.jpg' },
 				{ name: 'Oak Bookshelf', 			dimensions: '72x36x12 inches', price: '$199.99', 	shipping: 'November 20, 2024',	image: 'images/furniture1.jpg' },
@@ -96,7 +98,8 @@
 
                 // Debugging: Log which items are being rendered
                 console.log("Items to Render:", itemsToRender);
-
+				
+				//JS for displaying formatted items
                 itemsToRender.forEach(item => {
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'furniture-item';
@@ -107,6 +110,7 @@
                             <p><strong>Dimensions:</strong> ${item.dimensions}</p>
                             <p><strong>Price:</strong> ${item.price}</p>
                             <p><strong>Shipping Date:</strong> ${item.shipping}</p>
+							<button type="button" class="details-button">View in Augmented Reality</button>
                             <button type="button" class="details-button">Product Details</button>
                             <button type="button" class="cart-button">Add to Cart</button>
                         </div>
@@ -117,7 +121,8 @@
                 // Check if items were appended
                 console.log("Number of items rendered:", itemsContainer.children.length);
             }
-
+			
+			//Render separate pages using JS
             function renderPagination() {
                 console.log("renderPagination() called");
 
@@ -142,7 +147,8 @@
                 // Check if pagination buttons were appended
                 console.log("Number of pagination buttons:", paginationContainer.children.length);
             }
-
+			
+			//JS items per page logic
             itemsPerPageSelect.addEventListener('change', (e) => {
                 console.log("Items per page changed to:", e.target.value);
                 itemsPerPage = parseInt(e.target.value);
