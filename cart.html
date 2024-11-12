@@ -7,91 +7,101 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-	<div id="header">
-			<div id="logo-dropdown-container">
-				<!-- Dropdown Menu for Additional Links -->
-				<div id="dropdown">
-					<span id="dropdown-icon">&#9776;</span> <!-- Hamburger icon for dropdown -->
-					<div id="dropdown-content">
-						<a href="furniture_browser.html"><button>Browse Furniture</button></a>
-						<a href="about_us.html"><button>About Us</button></a>
-						<a href="faq.html"><button>FAQs</button></a>
-						<a href="contact_us.html"><button>Contact Us</button></a>
-					</div>
-				</div>
+    <div id="header">
+        <div id="logo-dropdown-container">
+            <!-- Dropdown Menu for Additional Links -->
+            <div id="dropdown">
+                <span id="dropdown-icon">&#9776;</span> <!-- Hamburger icon for dropdown -->
+                <div id="dropdown-content">
+                    <a href="furniture_browser.html"><button>Browse Furniture</button></a>
+                    <a href="about_us.html"><button>About Us</button></a>
+                    <a href="faq.html"><button>FAQs</button></a>
+                    <a href="contact_us.html"><button>Contact Us</button></a>
+                </div>
+            </div>
 
-				<!-- Logo Section -->
-				<div id="logo">
-					<a href="?page=home">
-						<img src="images/logo.png" alt="The Logo">
-					</a>
-				</div>
-			</div>
+            <!-- Logo Section -->
+            <div id="logo">
+                <a href="?page=home">
+                    <img src="images/logo.png" alt="The Logo">
+                </a>
+            </div>
+        </div>
 
-			<!-- Search Bar in the middle -->
-			<div class="container">
-				<div class="search-bar-wrapper">
-					<input type="text" id="general-search" name="general-search" placeholder="Search...">
-					<button type="button" class="search-button">Search</button>
-				</div>
-			</div>
+        <!-- Search Bar in the middle -->
+        <div class="container">
+            <div class="search-bar-wrapper">
+                <input type="text" id="general-search" name="general-search" placeholder="Search...">
+                <button type="button" class="search-button">Search</button>
+            </div>
+        </div>
 
-			<!-- Buttons Section -->
-			<div id="buttons">
-				<a href="signup.html"><button>Sign Up</button></a>
-				<a href="signin.html"><button>Sign In</button></a>
-				<a href="cart.html"><button>Cart</button></a>
+        <!-- Buttons Section -->
+        <div id="buttons">
+            <a href="signup.html"><button>Sign Up</button></a>
+            <a href="signin.html"><button>Sign In</button></a>
+            <a href="cart.html"><button>Cart</button></a>
 
-				<!-- Profile Dropdown Menu -->
-				<div class="dropdown">
-					<img src="./images/profile_icon.png" alt="Icon Image" id="dropdownIcon">
-					<div class="dropdown-content" id="dropdownContent">
-						<a href="user_dashboard.html">Dashboard</a>
-						<a href="logout.html">Logout</a>
-					</div>
-				</div>
-			</div>
-	</div>
-		<div class="centered-text"
-            <br><h3>Items in Your Cart</h3><br>
-		</div>
+            <!-- Profile Dropdown Menu -->
+            <div class="dropdown">
+                <img src="./images/profile_icon.png" alt="Icon Image" id="dropdownIcon">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="user_dashboard.html">Dashboard</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centered-text">
+        <br><h3>Items in Your Cart</h3><br>
+    </div>
     <div class="results-area">
-		<div class="furniture-item">
-			<img src="${item.image}" alt="Furniture Image" class="furniture-image">
-			<div class="furniture-info">
-				<p><strong>Furniture Name:</strong> Virginia Desk</p>
-				<p><strong>Price:</strong> $249.99</p>
-				<p><strong>Estimated shipping date:</strong> December 15, 2024</p>
-				<p><strong>Quantity:</strong> 1 </p>
-				<button type="button" class="details-button">Remove From Cart</button>
-				<button type="button" class="cart-button">Edit Quantity</button>
-			</div>
-		</div>
-		<div class="furniture-item">
-			<img src="${item.image}" alt="Furniture Image" class="furniture-image">
-			<div class="furniture-info">
-				<p><strong>Furniture Name:</strong> Virginia Desk</p>
-				<p><strong>Price:</strong> $249.99</p>
-				<p><strong>Estimated shipping date:</strong> December 15, 2024</p>
-				<p><strong>Quantity:</strong> 1 </p>
-				<button type="button" class="details-button">Remove From Cart</button>
-				<button type="button" class="cart-button">Edit Quantity</button>
-			</div>
-		</div>
-		<div class="furniture-item">
-			<img src="${item.image}" alt="Furniture Image" class="furniture-image">
-			<div class="furniture-info">
-				<p><strong>Furniture Name:</strong> Virginia Desk</p>
-				<p><strong>Price:</strong> $249.99</p>
-				<p><strong>Estimated shipping date:</strong> December 15, 2024</p>
-				<p><strong>Quantity:</strong> 1 </p>
-				<button type="button" class="details-button">Remove From Cart</button>
-				<button type="button" class="cart-button">Edit Quantity</button>
-			</div>
-		</div>
-	</div>
+        <!-- Example furniture items. Repeat this block for each item in the cart -->
+        <div class="furniture-item">
+            <img src="${item.image}" alt="Furniture Image" class="furniture-image">
+            <div class="furniture-info">
+                <p><strong>Furniture Name:</strong> Virginia Desk</p>
+                <p><strong>Price:</strong> $249.99</p>
+                <p><strong>Estimated shipping date:</strong> December 15, 2024</p>
+                <p><strong>Quantity:</strong> 1</p>
+                <button type="button" class="remove-button">Remove From Cart</button>
+                <button type="button" class="edit-button">Edit Quantity</button>
+            </div>
+        </div>
+        <div class="furniture-item">
+            <img src="${item.image}" alt="Furniture Image" class="furniture-image">
+            <div class="furniture-info">
+                <p><strong>Furniture Name:</strong> Virginia Desk</p>
+                <p><strong>Price:</strong> $249.99</p>
+                <p><strong>Estimated shipping date:</strong> December 15, 2024</p>
+                <p><strong>Quantity:</strong> 1</p>
+                <button type="button" class="remove-button">Remove From Cart</button>
+                <button type="button" class="edit-button">Edit Quantity</button>
+            </div>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+    <div class="subtotal">
+        <p id="subtotal-text"><strong>Subtotal:</strong> $<span id="subtotal-amount">0.00</span></p>
+    </div>
+    <div class="centered-text">
+        <a href="checkout.html"><button class = "checkout-link">Proceed to Checkout</button></a>
+    </div>
     <footer>
-        <p>&copy; 2024 Furniture Store</p>
+        &copy; 2024 Furniture Frontline. All rights reserved.
     </footer>
+
+    <script>
+        // JavaScript to calculate subtotal
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let subtotal = 0;
+            document.querySelectorAll('.furniture-item').forEach(item => {
+                const priceText = item.querySelector('.furniture-info p:nth-child(2)').textContent;
+                const price = parseFloat(priceText.replace('Price: $', ''));
+                subtotal += price;
+            });
+            document.getElementById('subtotal-amount').textContent = subtotal.toFixed(2);
+        });
+    </script>
 </body>
 </html>
