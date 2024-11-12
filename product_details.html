@@ -7,8 +7,54 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 	<body>
+		<div id="header">
+			<div id="logo-dropdown-container">
+				<!-- Dropdown Menu for Additional Links -->
+				<div id="dropdown">
+					<span id="dropdown-icon">&#9776;</span> <!-- Hamburger icon for dropdown -->
+					<div id="dropdown-content">
+						<a href="furniture_browser.html"><button>Browse Furniture</button></a>
+						<a href="about_us.html"><button>About Us</button></a>
+						<a href="faq.html"><button>FAQs</button></a>
+						<a href="contact_us.html"><button>Contact Us</button></a>
+					</div>
+				</div>
+
+				<!-- Logo Section -->
+				<div id="logo">
+					<a href="?page=home">
+						<img src="images/logo.png" alt="The Logo">
+					</a>
+				</div>
+			</div>
+
+			<!-- Search Bar in the middle -->
+			<div class="container">
+				<div class="search-bar-wrapper">
+					<input type="text" id="general-search" name="general-search" placeholder="Search...">
+					<button type="button" class="search-button">Search</button>
+				</div>
+			</div>
+
+			<!-- Buttons Section -->
+			<div id="buttons">
+				<a href="signup.html"><button>Sign Up</button></a>
+				<a href="signin.html"><button>Sign In</button></a>
+				<a href="cart.html"><button>Cart</button></a>
+
+				<!-- Profile Dropdown Menu -->
+				<div class="dropdown">
+					<img src="./images/profile_icon.png" alt="Icon Image" id="dropdownIcon">
+					<div class="dropdown-content" id="dropdownContent">
+						<a href="user_dashboard.html">Dashboard</a>
+						<a href="logout.html">Logout</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="results-area">
-			<div class="opportunity">
+			<div class="item">
+				<img src="${item.image}" alt="Furniture Image" class="furniture-image">
 				<p><strong>Furniture Name:</strong> Virginia Desk</p>
 				<p><strong>Type:</strong> Desk</p>
 				<p><strong>Manufacturer:</strong> Heartland Furniture</p>
@@ -17,7 +63,8 @@
 				<p><strong>Color:</strong> Silver</p>
 				<p><strong>Material:</strong> Metal/Glass</p>
 				<p><strong>Assembly:</strong> Some Assembly required</p>
-				<button type="button" class="search-button">Register</button>
+				<button type="button" class="details-button">View in Augmented Reality</button>
+				<button type="button" class="cart-button">Add to Cart</button>
 			</div>
 		</div>
     	<footer>
