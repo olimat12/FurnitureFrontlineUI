@@ -333,3 +333,34 @@ footer {
 .subtotal {
 	text-align: center;
 }
+
+.order-form{
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: #140650;
+	color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+	margin-top: 20px;
+    width: auto;
+    max-width: 800px;
+}
+
+.order-summary{
+	display: flex;
+	align-items: center;
+	align-self: center;
+	flex-direction: column;
+	text-align: center;
+	background-color: whitesmoke;
+	color: black;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+	margin-top: 20px;
+    width: auto;
+    max-width: 800px;
+}
