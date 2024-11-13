@@ -74,7 +74,7 @@ body {
     text-align: right;
     align-items: center;
     gap: 10px;
-    padding-right: 30px;
+    padding-right: 100px;
 }
 
 #buttons button {
@@ -279,6 +279,19 @@ footer {
 	width: 100%;
 }
 
+.order-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #140650;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+	text-align: center;
+	width: 100%;
+}
+
 .checkout-link {
     margin-top: 10px;
     padding: 10px;
@@ -334,33 +347,101 @@ footer {
 	text-align: center;
 }
 
-.order-form{
-	display: flex;
-	align-self: center;
-	flex-direction: column;
-	align-items: center;
-	background-color: #140650;
-	color: white;
-    padding: 12px;
-    border-radius: 8px;
+.order-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically within the parent (if parent has height) */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Add space between the elements */
+    margin-top: 20px;
     margin-bottom: 20px;
-	margin-top: 20px;
-    width: auto;
-    max-width: 800px;
 }
 
-.order-summary{
-	display: flex;
-	align-items: center;
-	align-self: center;
-	flex-direction: column;
-	text-align: center;
-	background-color: whitesmoke;
-	color: black;
+.order-summary {
+    flex: 1; /* Allow the items to take up equal space */
+    max-width: 500px; /* Limit their width */
+	background-color: #7CC623;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 20px;
-	margin-top: 20px;
-    width: auto;
-    max-width: 800px;
+}
+
+.order-form {
+	flex: 1;
+	background-color: #7CC623;
+	text-align: center;
+	align-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Ensure it takes the full width of the parent */
+}
+.form-group label {
+    margin-bottom: 4px; /* Add spacing between the label and input */
+}
+
+/* Signup form heading */
+.signup-heading {
+    text-align: center;
+    color: #140650;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Signin form styles */
+.signin input {
+	width: 50%;
+}
+
+/* General form styles */
+form {
+    text-align: center;
+    background: #7CC623;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+form label {
+    display: block;
+    color: #140650;
+    margin-bottom: 8px;
+}
+
+form input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #140650;
+    color: #FFFFFF;
+    border: 1px solid #2E6DA4;
+    border-radius: 4px;
+    padding: 6px 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Signup form styles */
+.form-heading {
+    text-align: center;
+    color: #140650;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.order-heading {
+	color: #140650;
 }
