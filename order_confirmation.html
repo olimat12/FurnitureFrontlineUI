@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation - Furniture Store</title>
+    <title>Checkout | Furniture Frontline</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<img src="logo.png" alt="Furniture Store Logo">
-			<h1>Furniture Store</h1>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="home.html">Home</a></li>
-				<li><a href="furniture_browser.html">Browse Furniture</a></li>
-				<li><a href="user_dashboard.html">Dashboard</a></li>
-				<li><a href="signup.html">Sign Up</a></li>
-				<li><a href="signin.html">Sign In</a></li>
-			</ul>
-		</nav>
-		<a href="cart.html" class="cart-button">Cart</a>
-		<div class="hamburger" onclick="toggleMenu()">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</header>
-	<script>
-		function toggleMenu() {
-			const nav = document.querySelector('header nav ul');
-			nav.classList.toggle('active');
-		}
-	</script>
+    <div id="header">
+        <div id="logo-dropdown-container">
+            <!-- Dropdown Menu for Additional Links -->
+            <div id="dropdown">
+                <span id="dropdown-icon">&#9776;</span> <!-- Hamburger icon for dropdown -->
+                <div id="dropdown-content">
+                    <a href="furniture_browser.html"><button>Browse Furniture</button></a>
+                    <a href="about_us.html"><button>About Us</button></a>
+                    <a href="faq.html"><button>FAQs</button></a>
+                    <a href="contact_us.html"><button>Contact Us</button></a>
+                </div>
+            </div>
+
+            <!-- Logo Section -->
+            <div id="logo">
+                <a href="home.html">
+                    <img src="images/logo.png" alt="The Logo">
+                </a>
+            </div>
+        </div>
+
+        <!-- Search Bar in the middle -->
+        <div class="container">
+            <div class="search-bar-wrapper">
+                <input type="text" id="general-search" name="general-search" placeholder="Search...">
+                <a href="furniture_browser.html" class="search-button">Search</a>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div id="buttons">
+            <a href="signup.html"><button>Sign Up</button></a>
+            <a href="signin.html"><button>Sign In</button></a>
+            <a href="cart.html"><button>Cart</button></a>
+
+            <!-- Profile Dropdown Menu -->
+            <div class="dropdown">
+                <img src="./images/profile_icon.png" alt="Icon Image" id="dropdownIcon">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="user_dashboard.html">Dashboard</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
-        <section>
+        <div class="results-area">
             <h2>Thank you for your purchase!</h2>
             <p>Your order has been successfully placed.</p>
             <h3>Order Summary</h3>
             <ul>
-                <li>Comfy Chair - Quantity: 1 - Price: $149</li>
-                <!-- More items if applicable -->
+                <li>Comfy Chair - Quantity: 1 - Price: $99.99</li>
+				<li>Virginia Desk - Quantity: 1 - Price: $249.99</li>
+				<li>Tax: $28.27</li>
             </ul>
-            <p>Total: $149</p>
+            <p>Total: $378.85</p>
             <h3>Tracking Information</h3>
-            <p>Estimated delivery: 3-5 business days.</p>
-        </section>
+            <p>Available in: 3-5 business days.</p>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Furniture Store</p>

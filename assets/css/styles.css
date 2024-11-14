@@ -376,14 +376,29 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Two-column layout for form fields */
 .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%; /* Ensure it takes the full width of the parent */
+  display: flex; /* Use flexbox to align columns side by side */
+  gap: 20px; /* Add spacing between the columns */
+  justify-content: center; /* Center the columns horizontally */
+  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
-.form-group label {
-    margin-bottom: 4px; /* Add spacing between the label and input */
+
+.form-column {
+  flex: 1; /* Make columns take up equal space */
+  max-width: 400px; /* Optional: limit column width */
+}
+
+.form-column label, .form-column input, .form-column select {
+  width: 100%; /* Ensure inputs and labels fill the column width */
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+/* Center button under form fields */
+.order-button {
+  display: block;
+  margin: 20px auto; /* Center the button beneath the form fields */
+  padding: 10px 20px; /* Add some padding for better appearance */
 }
 
 /* Signup form heading */
@@ -401,46 +416,64 @@ footer {
 
 /* General form styles */
 form {
-    text-align: center;
-    background: #7CC623;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    margin: 20px auto 0;
+  text-align: center;
+  background: #7CC623;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px; /* Increase width for side-by-side fields */
+  margin: 40px auto; /* Center the form horizontally */
 }
 
 form label {
-    display: block;
-    color: #140650;
-    margin-bottom: 8px;
+  display: block;
+  color: #140650;
+  margin-bottom: 8px;
 }
 
-form input {
-    width: 100%;
-    padding: 6px;
-    margin-bottom: 8px;
-    box-sizing: border-box;
+form input, form select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
 }
 
 form button {
-    background-color: #140650;
-    color: #FFFFFF;
-    border: 1px solid #2E6DA4;
-    border-radius: 4px;
-    padding: 6px 20px;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    cursor: pointer;
+  background-color: #140650;
+  color: #FFFFFF;
+  border: 1px solid #2E6DA4;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Add spacing from the fields */
 }
 
-/* Signup form styles */
+/* Form heading */
 .form-heading {
-    text-align: center;
-    color: #140650;
-    font-size: 24px;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #140650;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
+
+/* Two-column layout for form fields */
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Add spacing between columns */
+}
+
+.form-column {
+  flex: 1;
+}
+
+/* Center button under form fields */
+.order-button {
+  display: block;
+  margin: 0 auto; /* Center the button */
+}
+
 
 .order-heading {
 	color: #140650;

@@ -32,7 +32,7 @@
         <div class="container">
             <div class="search-bar-wrapper">
                 <input type="text" id="general-search" name="general-search" placeholder="Search...">
-                <button type="button" class="search-button">Search</button>
+                <a href="furniture_browser.html" class="search-button">Search</a>
             </div>
         </div>
 
@@ -52,51 +52,40 @@
             </div>
         </div>
     </div>
-	<script>
-		function toggleMenu() {
-			const nav = document.querySelector('header nav ul');
-			nav.classList.toggle('active');
-		}
-	</script>
     <main>
-		<div class="form">
-			<form action="" method="POST">
-				<h1 class="form-heading">Sign Up</h1>
-				<div class="name-container">
-					<div>
-						<label for="firstname">First Name:</label>
-						<input type="text" id="firstname" name="firstname" required>
-					</div>
-					<div>
-						<label for="lastname">Last Name:</label>
-						<input type="text" id="lastname" name="lastname" required>
-					</div>
+		<form action="signin.html" class="signin-form">
+			<h1 class="form-heading">Sign Up</h1>
+			<div class="name-container">
+				<div>
+					<label for="firstname">First Name:</label>
+					<input type="text" id="firstname" name="firstname" required>
 				</div>
-
-				<!-- No input validation for company name -->
-				<label for="companyname">Company Name:</label>
-				<input type="text" id="companyname" name="companyname"><br>
-
-				<label for="zipcode">Zipcode:</label>
-				<input type="text" id="zipcode" name="zipcode" required><br>
-
-				<label for="phone">Phone Number:</label>
-				<input type="tel" id="phone" name="phone" required><br>
-
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required><br>
-
-				<label for="username">Username:</label>
-				<input type="text" id="username" name="username" required><br>
-
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password" required><br>
-
-				<button type="submit" name="submit">Sign Up</button>
-
-				<p>Already have an account? <a href="?page=signin">Login</a></p>
-			</form>
-		</div>
+				<div>
+					<label for="lastname">Last Name:</label>
+					<input type="text" id="lastname" name="lastname" required>
+				</div>
+			</div>
+			<label for="companyname">Company Name (If Applicable, otherwise N/A):</label>
+			<input type="text" id="companyname" name="companyname">
+			
+			<label for="zipcode">Zipcode:</label>
+			<input type="text" id="zipcode" name="zipcode" required>
+			
+			<label for="phone">Phone Number:</label>
+			<input type="tel" id="phone" name="phone" required>
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			
+			<button type="submit" name="submit">Sign Up</button>
+			<p>Already have an account? <a href="sigin.html">Login</a></p>
+		</form>
     </main>
     <footer>
         &copy; 2024 Furniture Frontline. All rights reserved.
